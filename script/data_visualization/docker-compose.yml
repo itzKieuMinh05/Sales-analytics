@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: warehouse_postgres
+    environment:
+      POSTGRES_DB: warehouse_db
+      POSTGRES_USER: warehouse_user
+      POSTGRES_PASSWORD: warehouse_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./warehouse:/var/lib/postgresql/data_import
+      - ./init:/docker-entrypoint-initdb.d
+  
+  jupyter:
+    image: jupyter/scipy-notebook:latest
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/work
+    environment:
+      - JUPYTER_TOKEN=matkhau123
+    depends_on:
+      - postgres
+
