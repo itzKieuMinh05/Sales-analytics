@@ -82,7 +82,7 @@ The warehouse follows a **Star Schema** design optimized for analytical queries:
 ┌─────────────────┐    ┌─────────▼────────┐    ┌─────────────────┐
 │   dim_product   │    │   fact_sales     │    │   dim_time      │
 │─────────────────│    │──────────────────│    │─────────────────│
-│ product_key  PK │◄───│ invoice          │───►│ date_key     PK │
+│ product_key  PK │───>│ invoice          │<───│ date_key     PK │
 │ stockcode       │    │ customer_key  FK │    │ invoicedate     │
 │ description     │    │ product_key   FK │    │ year            │
 └─────────────────┘    │ date_key      FK │    │ month           │
