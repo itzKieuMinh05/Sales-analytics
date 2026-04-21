@@ -86,11 +86,11 @@ The warehouse follows a **Star Schema** design optimized for analytical queries:
 │ stockcode       │    │ customer_key  FK │    │ invoicedate     │
 │ description     │    │ product_key   FK │    │ year            │
 └─────────────────┘    │ date_key      FK │    │ month           │
-                        │ quantity         │    │ day             │
-                        │ price            │    │ hour            │
-                        │ total            │    │ weekday         │
-                        │ is_return        │    └─────────────────┘
-                        └──────────────────┘
+                       │ quantity         │    │ day             │
+                       │ price            │    │ hour            │
+                       │ total            │    │ weekday         │
+                       │ is_return        │    └─────────────────┘
+                       └──────────────────┘
 ```
 
 ---
